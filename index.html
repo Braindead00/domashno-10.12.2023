@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <div class="profilna-snimka">
+            <label class="label" for="file">
+              <span class="glyphicon glyphicon-camera"></span>
+              <span>Смени снимката</span>
+            </label>
+            <input id="file" type="file" onchange="loadFile(event)"/>
+            <img src=png.jpg id="output" width="200" />
+        </div>
+        <div class="imena">
+        
+            <label for="fname">Име:</label>
+            <br>
+            <input type="text" id="fname" name="fname" required>
+            <br>
+            <label for="lname">Фамилия:</label>
+            <br>
+            <input type="text" id="lname" name="lname" required>
+            <br>
+        </div>
+        <fieldset class="pol">
+            <legend>Пол:</legend>
+          
+            <div>
+              <input type="radio" id="man" name="pol" value="man" checked />
+              <label for="man">Мъж</label>
+            </div>
+          
+            <div>
+              <input type="radio" id="woman" name="pol" value="woman" />
+              <label for="woman">Жена</label>
+            </div>
+          
+            <div>
+              <input type="radio" id="other" name="pol" value="other" />
+              <label for="other">Друг</label>
+            </div>
+        </fieldset>
+        <br>
+        <div class="cvqt-data">
+          <label for="color">Любим цвят:</label>
+          <input type="color" id="color" name="color" required>
+          <br>
+          <label for="date">Рождена дата:</label>
+          <input type="date" id="date" name="date" required>
+          <br>
+          <br>
+          <input type="submit" class="buton" id="submit" name="submit" value="Запази">
+        </div>
+    </form>
+    <script>
+        var loadFile = function (event) 
+        {
+        var image = document.getElementById("output");
+        image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+</body>
+</html>
